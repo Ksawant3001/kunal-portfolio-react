@@ -66,7 +66,6 @@ kunal-portfolio-react/
         ├── Experience.jsx        # Timeline: work + education
         ├── Services.jsx          # What I Do cards
         ├── Projects.jsx          # Project cards with highlights
-        ├── Testimonials.jsx      # Colleague quotes
         ├── Contact.jsx           # Validated contact form
         └── Footer.jsx            # Footer
 ```
@@ -80,7 +79,6 @@ All data is centralized in **`src/data/index.js`** — edit:
 - `SKILLS` — your tech stack and proficiency levels
 - `PROJECTS` — add your live/GitHub URLs, descriptions
 - `SERVICES` — what you offer
-- `TESTIMONIALS` — colleague quotes
 - `CONTACT_INFO` — your email, phone, social links
 - `NAV_LINKS` — navigation items
 
