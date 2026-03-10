@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d0d0d;
+  color: #e5e7eb;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00b4ff;
+  border-radius: 2px;
+}
+
+/* ── Utility classes used across components ── */
+.gradient-text {
+  background: linear-gradient(135deg, #00b4ff, #00d9f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow {
+  box-shadow: 0 0 30px rgba(0, 180, 255, 0.15);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 180, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 180, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Card hover ── */
+.card-hover {
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 180, 255, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 180, 255, 0.1);
+}
+
+/* ── Nav underline ── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #00b4ff;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Skill bar ── */
+.skill-bar {
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1.3s ease;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 180, 255, 0.22);
+  background: rgba(0, 180, 255, 0.05);
+  color: #00b4ff;
+}
+
+/* ── Form ── */
+.form-field {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  padding: 12px 16px;
+  width: 100%;
+  color: #e5e7eb;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field:focus {
+  border-color: #00b4ff;
+  box-shadow: 0 0 0 3px rgba(0, 180, 255, 0.08);
+}
+
+.form-field.err {
+  border-color: #f87171;
+}
+
+.emsg {
+  color: #f87171;
+  font-size: 0.72rem;
+  margin-top: 3px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* ── Marquee ── */
+.marquee-inner {
+  display: inline-flex;
+  animation: marqueeX 22s linear infinite;
+  gap: 0;
+  white-space: nowrap;
+}
+
+/* ── Service card icon ── */
+.service-card:hover .service-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.service-icon {
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
